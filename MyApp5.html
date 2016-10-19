@@ -1,0 +1,54 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="registerUser.js"></script>
+
+<div ng-app="userModule" ng-Controller="userController">
+<div class="container">
+
+		<center>
+		<div class="col-md-6 col-md-offset-3">
+		
+			<h1>Registration Form</h1>
+			<form name="registerForm" ng-submit="saveUser()" validate>
+			
+				<div class="form-group">
+					<input type="text" placeholder="FirstName" class="form-control" name="firstname" ng-model="firstname" data-toggle="tooltip" title="Enter first name" required><br/>
+					
+				</div>
+				
+				<div class="form-group" >
+					<input type="text" placeholder="LastName" class="form-control" name="lastname" ng-model="lastname" data-toggle="tooltip" title="Enter last name" required><br/>
+				</div>
+				
+				<div class="form-group" >
+					<input type="text" placeholder="UserName" class="form-control" name="username" ng-model="username" data-toggle="tooltip" title="Enter user name" required><br/>
+				</div>
+				
+				<div class="form-group" >
+					<input type="password" placeholder="Password" class="form-control" name="userpassword" ng-model="userpassword" data-toggle="tooltip" title="Enter password" required><br/>
+				</div>
+				
+				<input type="submit" value="Register" class="btn btn-primary" ng-disabled="registerForm.$invalid"> 
+				<!-- <img ng-if="dataLoading" src="ajax-loader.gif" /> -->
+				<a href="MyApp6.html" class="btn btn-link">Login</a><br/><br/><br/>
+				<div class="error" ng-show="registerError"> 
+					<strong class="alert alert-danger">
+						{{registerSignupError}}
+					</strong>
+				</div>
+				<div class="success" ng-show="registerSuccess" > 
+					<strong class="alert alert-success">
+						{{registerSignupSuccess}}
+					</strong>
+				</div>
+				
+		</form>
+		
+		</div>
+		
+		</center>
+
+</div>
+</div>		

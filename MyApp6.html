@@ -1,0 +1,46 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="loginUser.js"></script>
+
+<div ng-app="loginModule" ng-Controller="loginController">
+<div class="container">
+
+		<center>
+		<div class="col-md-6 col-md-offset-3">
+		
+			<h1>Login Form</h1>
+			<form name="loginForm" ng-submit="loginUserFn()" validate>
+			
+				<div class="form-group">
+					<input type="text" placeholder="UserName" class="form-control" name="loginuser" ng-model="loginuser" data-toggle="tooltip" title="Enter UserName" required></input><br/>
+					
+				</div>
+				
+				<div class="form-group" >
+					<input type="password" placeholder="Password" class="form-control" name="loginpass" ng-model="loginpass" data-toggle="tooltip" title="Enter password" required><br/>
+				</div>
+				
+				<input type="submit" value="Login" class="btn btn-primary" ng-disabled="loginForm.$invalid"> 
+				<!-- <img ng-if="dataLoading" src="ajax-loader.gif" /> -->
+				<a href="MyApp5.html" class="btn btn-link">Register</a><br/><br/><br/>
+				<div class="error" ng-show="loginError"> 
+					<strong class="alert alert-danger">
+						{{loginSigninError}}
+					</strong>
+				</div> 
+				<!-- <div class="success" ng-show="registerSuccess" > 
+					<strong class="alert alert-success">
+						{{registerSignupSuccess}}
+					</strong>
+				</div> -->
+				
+		</form>
+		
+		</div>
+		
+		</center>
+
+</div>
+</div>		
